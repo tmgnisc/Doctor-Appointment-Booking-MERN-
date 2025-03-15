@@ -49,5 +49,7 @@ body {
     line-height: 30px;
   }
 
-
+.show_menu{
+  display: block;
+}
 }
