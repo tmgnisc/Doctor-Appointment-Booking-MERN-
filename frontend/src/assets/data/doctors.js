@@ -11,7 +11,7 @@ export const doctors = [
     totalRating: 272,
     photo: doctorImg01,
     totalPatients: 1500,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "Patan Hospital",
   },
   {
     id: "02",
@@ -21,7 +21,7 @@ export const doctors = [
     totalRating: 272,
     photo: doctorImg02,
     totalPatients: 1500,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "Alka Hospital",
   },
   {
     id: "03",
@@ -31,6 +31,6 @@ export const doctors = [
     totalRating: 272,
     photo: doctorImg03,
     totalPatients: 1500,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "Om Hospital",
   },
 ];
