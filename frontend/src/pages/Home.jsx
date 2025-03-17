@@ -14,6 +14,7 @@ import ServiceList from "../components/Services/ServiceList";
 import featureImg from "../assets/images/feature-img.png";
 import videoIcon from "../assets/images/video-icon.png";
 import DoctorList from "../components/Doctors/DoctorList";
+import faqImg from "../assets/images/faq-img.png";
 
 const Home = () => {
   return (
@@ -254,9 +255,18 @@ const Home = () => {
             </p>
           </div>
 
-          <DoctorList/>
+          <DoctorList />
         </div>
       </section>
+
+      {/* faq section */}
+      <div className="container">
+        <div className="flex justify-between gap-[50px] lg:gp-0 ">
+          <div className="w-1/2 hidden md:block">
+            <img src={faqImg} alt="" />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
