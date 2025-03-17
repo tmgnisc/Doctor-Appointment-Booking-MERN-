@@ -8,6 +8,7 @@ import icon02 from "../assets/images/icon02.png";
 import icon03 from "../assets/images/icon03.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import avatarIcon from "../assets/images/avatar-icon.png";
 import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
 import featureImg from "../assets/images/feature-img.png";
@@ -226,11 +227,13 @@ const Home = () => {
                   </span>
                 </div>
                 <div className="w-[65px] lg:w-[96px] bg-[#ccf0f3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full ">
-                  {" "}
-                  Consultation{" "}
+                  Consultation
                 </div>
 
-                
+                <div className="flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px] ">
+                  <img src={avatarIcon} alt="" />
+                  <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor">Sudip Pradhan</h4>
+                </div>
               </div>
             </div>
           </div>
