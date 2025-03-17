@@ -1,4 +1,5 @@
 import React from "react";
+
 import heroImg01 from "../assets/images/hero-img01.png";
 import heroImg02 from "../assets/images/hero-img02.png";
 import heroImg03 from "../assets/images/hero-img03.png";
@@ -179,7 +180,33 @@ const Home = () => {
             </p>
           </div>
 
-          <ServiceList/>
+          <ServiceList />
+        </div>
+      </section>
+
+      {/* Feature section */}
+      <section>
+        <div className="container">
+          <div className="flex items-center justify-between flex-col lg:flex-row">
+            <div className="xl:w-[670px]">
+              <h2 className="heading">
+                Get virtual treatment <br /> anytime
+              </h2>
+              <ul className="pl-4">
+                <li className="text_para">
+                  1. Schedule the Appointment directly
+                </li>
+                <li className="text_para">2. Search for doctors here</li>
+                <li className="text_para">
+                  3.View our doctors, who are accepting new doctors, use online
+                  scheduling app. Select appointment time
+                </li>
+              </ul>
+              <Link to="/">
+                <button className="btn">Learn More</button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
