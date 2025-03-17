@@ -13,6 +13,7 @@ import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
 import featureImg from "../assets/images/feature-img.png";
 import videoIcon from "../assets/images/video-icon.png";
+import DoctorList from "../components/Doctors/DoctorList";
 
 const Home = () => {
   return (
@@ -232,11 +233,28 @@ const Home = () => {
 
                 <div className="flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px] ">
                   <img src={avatarIcon} alt="" />
-                  <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor">Sudip Pradhan</h4>
+                  <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor">
+                    Sudip Pradhan
+                  </h4>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* great doctor section */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">Our Great Doctors</h2>
+            <p className="text_para text-center">
+              World-class care for everyone. Our health system offers unmatched,
+              expert health care.
+            </p>
+          </div>
+
+          <DoctorList/>
         </div>
       </section>
     </>

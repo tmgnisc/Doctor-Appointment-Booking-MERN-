@@ -5,8 +5,8 @@ import doctorImg03 from "../images/doctor-img03.png";
 export const doctors = [
   {
     id: "01",
-    name: "Dr. Alfaz Ahmed",
-    specialty: "Surgeon",
+    name: "Dr. Sanjiv Magar",
+    specialization: "Surgeon",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg01,
@@ -15,8 +15,8 @@ export const doctors = [
   },
   {
     id: "02",
-    name: "Dr. Saleh Mahmud",
-    specialty: "Neurologist",
+    name: "Dr. Sudip Pradhan",
+    specialization: "Neurologist",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg02,
@@ -25,8 +25,8 @@ export const doctors = [
   },
   {
     id: "03",
-    name: "Dr. Farid Uddin",
-    specialty: "Dermatologist",
+    name: "Dr. Saurav Shrestha",
+    specialization: "Dermatologist",
     avgRating: 4.8,
     totalRating: 272,
     photo: doctorImg03,
