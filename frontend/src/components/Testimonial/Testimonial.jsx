@@ -34,9 +34,124 @@ const Testimonial = () => {
             <div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
               <div>
-                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">Sonu Thapa</h4>
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
+                  Yukesh Shrestha
+                </h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                </div>
               </div>
             </div>
+
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              I have taken medical services from them. They treat so well and
+              they are providing the best medical services in Nepal.
+            </p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
+              <img src={patientAvatar} alt="" />
+              <div>
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
+                  Yukesh Shrestha
+                </h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                </div>
+              </div>
+            </div>
+
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              I have taken medical services from them. They treat so well and
+              they are providing the best medical services in Nepal.
+            </p>
+          </div>
+        </SwiperSlide>
+
+
+        <SwiperSlide>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
+              <img src={patientAvatar} alt="" />
+              <div>
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
+                  Yukesh Shrestha
+                </h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                </div>
+              </div>
+            </div>
+
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              I have taken medical services from them. They treat so well and
+              they are providing the best medical services in Nepal.
+            </p>
+          </div>
+        </SwiperSlide>
+
+
+        <SwiperSlide>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
+              <img src={patientAvatar} alt="" />
+              <div>
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
+                  Yukesh Shrestha
+                </h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                </div>
+              </div>
+            </div>
+
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              I have taken medical services from them. They treat so well and
+              they are providing the best medical services in Nepal.
+            </p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
+              <img src={patientAvatar} alt="" />
+              <div>
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
+                  Yukesh Shrestha
+                </h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                </div>
+              </div>
+            </div>
+
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              I have taken medical services from them. They treat so well and
+              they are providing the best medical services in Nepal.
+            </p>
           </div>
         </SwiperSlide>
       </Swiper>
