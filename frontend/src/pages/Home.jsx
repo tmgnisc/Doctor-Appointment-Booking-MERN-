@@ -16,6 +16,7 @@ import videoIcon from "../assets/images/video-icon.png";
 import DoctorList from "../components/Doctors/DoctorList";
 import faqImg from "../assets/images/faq-img.png";
 import FaqList from "../components/Faq/FaqList";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -269,10 +270,24 @@ const Home = () => {
 
           <div className="w-full md:w-1/2">
             <h2 className="heading">Most questions by our beloved patients</h2>
-            <FaqList/>
+            <FaqList />
           </div>
         </div>
       </div>
+
+      {/* testimonial section */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">What our patient says</h2>
+            <p className="text_para text-center">
+              World-class care for everyone. Our health system offers unmatched,
+              expert health care.
+            </p>
+          </div>
+          <Testimonial />
+        </div>
+      </section>
     </>
   );
 };
