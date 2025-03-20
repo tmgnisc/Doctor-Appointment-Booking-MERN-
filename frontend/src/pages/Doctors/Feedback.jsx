@@ -1,9 +1,10 @@
-import React from "react";
-import avatar  from "../../assets/images/avatar-icon.png";
+import React, { useState } from "react";
+import avatar from "../../assets/images/avatar-icon.png";
 import { formateDate } from "../../../utils/formateDate";
-import {AiFillStar} from 'react-icons/ai'
+import { AiFillStar } from "react-icons/ai";
 
 const Feedback = () => {
+    const [showFeedbackForm, setShowFeedbackForm] = useState(false)
   return (
     <div>
       <div className="mb-[50px]">
@@ -16,18 +17,28 @@ const Feedback = () => {
               <img src={avatar} alt="" />
             </figure>
             <div>
-                <h5 className="text-[16px] leading-6 text-primaryColor font-bold">Yukesh Shrestha</h5>
-                <p className="text-[14px] leading-6 text-textColor ">{formateDate("02-5-2024")}</p>
-                <p className="text_para mt-3 font-medium text-[15px]">Good service, highly recommend. I love the service. </p>
+              <h5 className="text-[16px] leading-6 text-primaryColor font-bold">
+                Yukesh Shrestha
+              </h5>
+              <p className="text-[14px] leading-6 text-textColor ">
+                {formateDate("02-5-2024")}
+              </p>
+              <p className="text_para mt-3 font-medium text-[15px]">
+                Good service, highly recommend. I love the service.{" "}
+              </p>
             </div>
           </div>
 
           <div className="flex gap-1">
-            {[...Array(5).keys()].map((_, index ) => (
-                <AiFillStar key={index} color="#0067ff"/>
+            {[...Array(5).keys()].map((_, index) => (
+              <AiFillStar key={index} color="#0067ff" />
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="text-center">
+        <button className="btn">Give Feedback</button>
       </div>
     </div>
   );
