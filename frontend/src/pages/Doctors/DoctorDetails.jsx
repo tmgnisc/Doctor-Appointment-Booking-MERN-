@@ -7,7 +7,7 @@ const DoctorDetails = () => {
     <section>
       <div className="max-w-[1170px] px-5 mx-auto">
         <div className="grid md:grid-cols-3 gap-[50px]">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2">    
             <div className="flex items-center gap-5">
               <figure className="max-w-[200px] max-h-[200px]">
                 <img src={doctorImg} alt="" className="w-full" />
@@ -26,9 +26,19 @@ const DoctorDetails = () => {
                   </span>
                   <span className="text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-[400] text-textColor">(272)</span>
                 </div>
+                <p className="text_para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px]">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, qui!
+                </p>
               </div>
             </div>
+
+<div className="mt-[50px] border-b border-solid border-[#0066ff34]">
+<button className={`pyt-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}> About</button>
+</div>
+
+
           </div>
+          <div></div>
         </div>
       </div>
     </section>
