@@ -26,6 +26,17 @@ const Login = () => {
               className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none  focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor rounded-md cursor-pointer" required
             />
           </div>
+
+          <div className="mb-5">
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none  focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor rounded-md cursor-pointer" required
+            />
+          </div>
         </form>
       </div>
     </section>
