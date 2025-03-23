@@ -60,12 +60,8 @@ const DoctorDetails = () => {
             </div>
 
             <div className="mt-[50px]">
-{
-  tab === 'about'&& <DoctorAbout/>
-}
-{
-  tab === 'feedback' && <Feedback/>
-}
+              {tab === "about" && <DoctorAbout />}
+              {tab === "feedback" && <Feedback />}
             </div>
           </div>
           <div></div>
