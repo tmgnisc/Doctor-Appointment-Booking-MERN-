@@ -2,9 +2,10 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>
-      Contact
-    </div>
+   <section className='px-4 mx-auto max-w-screen-md'>
+<h2>Contact Us</h2>
+
+   </section>
   )
 }
 
