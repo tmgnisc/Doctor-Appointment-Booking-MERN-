@@ -30,7 +30,7 @@ const DoctorAbout = () => {
                 {formateDate("09-05-2018")} - {formateDate("09-05-2023")}
               </span>
               <p className="text-[16px] leading-6 font-medium text-textColor">
-                PHP in Surgeon
+                PHD in Surgeon
               </p>
             </div>
             <p className="text-[14px] leading-5 font-medium text-textColor">
@@ -44,7 +44,7 @@ const DoctorAbout = () => {
                 {formateDate("05-04-2025")}
               </span>
               <p className="text-[16px] leading-6 font-medium text-textColor">
-                PHP in Surgeon
+                PHD in Surgeon
               </p>
             </div>
             <p className="text-[14px] leading-5 font-medium text-textColor">
