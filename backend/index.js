@@ -15,6 +15,30 @@ const corsOptions = {
 app.get('/', (req, res)=>{
     res.send('Api is working')
 })
+
+
+//db connection
+
+mongoose.set('strictQuery', false)
+const connectDB = async() =>{
+    try{
+        await mongoose.connect(process.env.MONGO_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        })
+        console.log("db is connected")
+    } catch (err){
+        console.log("db connection failed")
+    }
+}
+
+//middleware
+app.use(express.json())
+app.use(cookieParser())
+app.use(cors(corsOptions))
+
+
 app.listen(port, ()=>{
+    connectDB()
     console.log("server is running on port" + port)
 })
