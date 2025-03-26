@@ -38,7 +38,8 @@ export const register = async (req, res) => {
         role,
       });
 
-      if (role === "doctor") {
+      
+    } if (role === "doctor") {
         user = new Doctor({
           name,
           email,
@@ -48,7 +49,6 @@ export const register = async (req, res) => {
           role,
         });
       }
-    }
 
     await user.save();
     res
