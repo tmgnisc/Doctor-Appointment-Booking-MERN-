@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import DoctorCard from "./../../components/Doctors/DoctorCard";
 import { doctors } from "../../assets/data/doctors";
 import Testimonial from "../../components/Testimonial/Testimonial";
+import { BASE_URL } from "../../../config";
+import useFetchData from "../../hooks/userFetchData";
+import Loader from "../.././Loader/Loading";
+import Error from "../.././Error/Error";
 
 const Doctors = () => {
+  const [query, setQuery] = useState('')
+  const { data: doctors, loading, error } = useFetchData(`${BASE_URL}/doctors`);
   return (
     <div>
       <section className="bg-[#ff9ea]">
@@ -24,11 +30,15 @@ const Doctors = () => {
 
       <section>
         <div className="container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {doctors.map((doctor) => (
-              <DoctorCard key={doctor} doctor={doctor} />
-            ))}
-          </div>
+          {loading && <Loader />}
+          {error && <Error />}
+          {!loading && !error && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              {doctors.map((doctor) => (
+                <DoctorCard key={doctor} doctor={doctor} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
