@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { authContext } from "../../context/AuthContext";
 import MyBookings from "./MyBookings";
 import Profile from "./Profile";
@@ -11,6 +11,7 @@ import Error from "../../Error/Error";
 const MyAccount = () => {
   const { dispatch } = useContext(authContext);
   const [tab, setTab] = useState("booking");
+  const navigate = useNavigate()
 
   const {
     data: userData,
@@ -21,6 +22,7 @@ const MyAccount = () => {
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
+    navigate("/login")
   };
 
   return (
