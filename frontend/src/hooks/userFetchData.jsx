@@ -11,6 +11,7 @@ const useFetchData = (url) => {
       setLoading(true);
       try {
         const res = await fetch(url, {
+          // to check error this code remove
           headers: { Authorization: `Bearer ${token}` },
         });
 
