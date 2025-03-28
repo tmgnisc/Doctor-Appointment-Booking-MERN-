@@ -1,4 +1,6 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Home from "../pages/Home";
 import Services from "../pages/Services";
 import Login from "../pages/Login";
@@ -7,10 +9,14 @@ import Contact from "../pages/Contact";
 import Doctors from "../pages/Doctors/Doctors";
 import DoctorDetails from "../pages/Doctors/DoctorDetails";
 import MyAccount from "../Dashboard/user-accont/MyAccount";
-
-import { Routes, Route } from "react-router-dom";
 import Dashboard from "../Dashboard/doctor-account/Dashboard";
 import ProtectedRoute from "./ProtectedRoute";
+
+// 🆕 Admin components
+import AdminDashboard from "../AdminDashboard/AdminAccount/AdminDashboard";
+import AdminHome from "../AdminDashboard/AdminAccount/AdminHome";
+import DoctorList from "../AdminDashboard/AdminAccount/DoctorList";
+import DoctorDetailsAdmin from "../AdminDashboard/AdminAccount/DoctorDetailsAdmin";
 
 const Routers = () => {
   return (
@@ -24,6 +30,8 @@ const Routers = () => {
         <Route path="/register" element={<Signup />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+
+        {/* 🛡️ Protected User Dashboard */}
         <Route
           path="/users/profile/me"
           element={
@@ -32,6 +40,8 @@ const Routers = () => {
             </ProtectedRoute>
           }
         />
+
+        {/* 🛡️ Protected Doctor Dashboard */}
         <Route
           path="/doctors/profile/me"
           element={
@@ -40,6 +50,19 @@ const Routers = () => {
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<AdminHome />} />
+          <Route path="doctors" element={<DoctorList />} />
+          <Route path="/admin/doctors/:id" element={<DoctorDetails />} />
+        </Route>
       </Routes>
     </div>
   );

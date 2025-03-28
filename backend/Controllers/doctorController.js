@@ -104,3 +104,52 @@ export const getDoctorProfile = async (req, res) => {
       .json({ success: false, message: "Something went wrong, cannot get" });
   }
 };
+
+
+
+export const getAllDoctorsForAdmin = async (req, res) => {
+  try {
+    const doctors = await Doctor.find({}).select("-password");
+
+    res.status(200).json({
+      success: true,
+      message: "All doctors fetched (admin)",
+      data: doctors,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch doctors for admin",
+    });
+  }
+};
+
+
+export const approveDoctor = async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const doctor = await Doctor.findById(id);
+
+    if (!doctor) {
+      return res.status(404).json({
+        success: false,
+        message: "Doctor not found",
+      });
+    }
+
+    doctor.isApproved = "approved";
+    await doctor.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Doctor approved successfully",
+      data: doctor,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to approve doctor",
+    });
+  }
+};

@@ -1,16 +1,32 @@
+// import { useContext } from "react";
+// import { Navigate } from "react-router-dom";
+// import { authContext } from "../context/AuthContext";
 
+// const ProtectedRoute = ({ children, allowedRoles }) => {
+//   const { token, role } = useContext(authContext);
+
+//   const isAllowed = allowedRoles.includes(role);
+//   const accessibleRoute =
+//     token && isAllowed ? children : <Navigate to="/login" replace={true} />;
+
+//   return accessibleRoute;
+// };
+
+// export default ProtectedRoute;
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { authContext } from "../context/AuthContext";
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
   const { token, role } = useContext(authContext);
 
-  const isAllowed = allowedRoles.includes(role);
-  const accessibleRoute =
-    token && isAllowed ? children : <Navigate to="/login" replace={true} />;
+  const isAllowed = token && allowedRoles.includes(role);
 
-  return accessibleRoute;
+  if (!isAllowed) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children ? children : <Outlet />;
 };
 
 export default ProtectedRoute;

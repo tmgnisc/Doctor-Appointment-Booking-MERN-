@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import { authContext } from "../context/AuthContext.jsx";
 import HashLoader from "react-spinners/HashLoader";
 
-
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -46,10 +45,19 @@ const Login = () => {
         },
       });
 
-      console.log(result, 'login data')
+      console.log(result, "login data");
       setLoading(false);
       toast.success(result.message);
-      navigate("/home");
+
+      if (result.role === "admin") {
+        navigate("/admin");
+      } else if (result.role === "doctor") {
+        navigate("/doctors/profile/me");
+      } else if (result.role === "patient") {
+        navigate("/users/profile/me");
+      } else {
+        navigate("/home");
+      }
     } catch (error) {
       toast.error(error.message);
       setLoading(false);
@@ -92,7 +100,7 @@ const Login = () => {
               type="submit"
               className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg py-3"
             >
-              {loading ? <HashLoader size={25} color="#ffffff"/> : 'Login'}
+              {loading ? <HashLoader size={25} color="#ffffff" /> : "Login"}
             </button>
           </div>
 
