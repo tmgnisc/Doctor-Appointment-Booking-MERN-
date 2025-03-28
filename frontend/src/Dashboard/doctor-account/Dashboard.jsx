@@ -7,7 +7,7 @@ import Loader from "../../Loader/Loading";
 import starIcon from "../../assets/images/Star.png";
 import DoctorAbout from "../../pages/Doctors/DoctorAbout";
 import Profile from "./Profile";
-
+import Appointments from "./Appointments";
 const Dashboard = () => {
   const { data, loading, error } = useGetProfile(
     `${BASE_URL}/doctors/profile/me`
@@ -67,7 +67,7 @@ const Dashboard = () => {
                       <div className="flex items-center gap-[6px]">
                         <span className="flex items-center gap-[6px] text-headingColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold">
                           <img src={starIcon} alt="" />
-                       {data.averageRating}
+                          {data.averageRating}
                         </span>
 
                         <span className="text-textColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold">
@@ -87,8 +87,10 @@ const Dashboard = () => {
                   />
                 </div>
               )}
-              {tab === "appointments" && <div>appointments</div>}
-              {tab === "settings" && <Profile doctorData={data}/>}
+              {tab === "appointments" && (
+                <Appointments appointments={data.appointments} />
+              )}
+              {tab === "settings" && <Profile doctorData={data} />}
             </div>
           </div>
         )}
