@@ -90,7 +90,7 @@ const Header = () => {
                     <img
                       src={user?.photo}
                       className="w-full rounded-full"
-                      alt="img"
+                      alt=""
                     />
                   </figure>
                 </Link>
