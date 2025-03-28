@@ -88,7 +88,7 @@ const Header = () => {
                 >
                   <figure className="w-[35px] h-[35px] rounded-full">
                     <img
-                      src={user?.photo}
+                      src={user.photo}
                       className="w-full rounded-full"
                       alt=""
                     />
@@ -102,7 +102,7 @@ const Header = () => {
                 </button>
               </Link>
             )}
-
+            <h2>Welcome {user.name}</h2>
             <span className="md:hidden" onClick={toggleMenu}>
               <BiMenu className="w-6 h-6 cursor-pointer " />
             </span>

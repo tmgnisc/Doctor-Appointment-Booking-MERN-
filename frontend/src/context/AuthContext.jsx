@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { BASE_URL } from "../../config";
 
 const initialState = {
   user:
