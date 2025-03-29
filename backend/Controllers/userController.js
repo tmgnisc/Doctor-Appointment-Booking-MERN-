@@ -110,3 +110,23 @@ export const getMyAppointments = async (req, res) => {
       .json({ success: false, message: "Something went wrong, cannot get" });
   }
 };
+
+
+export const getAdminProfile = async (req, res) => {
+  const userId = req.userId;
+
+  try {
+    const user = await User.findById(userId).select("-password");
+    if (!user) {
+      return res.status(404).json({ success: false, message: "Admin not found" });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Admin profile fetched",
+      data: user,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};

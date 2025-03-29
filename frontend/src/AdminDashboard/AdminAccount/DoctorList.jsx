@@ -1,9 +1,26 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Table, Tag, Spin, Alert, Button, Popconfirm, message } from "antd";
+import {
+  Table,
+  Tag,
+  Spin,
+  Alert,
+  Button,
+  Popconfirm,
+  message,
+  Card,
+  Typography,
+  Space,
+} from "antd";
 import axios from "axios";
-import { authContext } from "../../context/AuthContext"; 
+import { authContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
-import { Space } from "antd";
+import {
+  CheckCircleOutlined,
+  ExclamationCircleOutlined,
+  EyeOutlined,
+} from "@ant-design/icons";
+
+const { Title } = Typography;
 
 const DoctorList = () => {
   const [doctors, setDoctors] = useState([]);
@@ -11,7 +28,7 @@ const DoctorList = () => {
   const [approvingId, setApprovingId] = useState(null);
   const [error, setError] = useState(null);
 
-  const { token } = useContext(authContext); // ✅ Get token from context
+  const { token } = useContext(authContext);
 
   const fetchDoctors = async () => {
     setLoading(true);
@@ -69,45 +86,55 @@ const DoctorList = () => {
 
   const columns = [
     {
-      title: "Name",
+      title: "👨‍⚕️ Name",
       dataIndex: "name",
       key: "name",
+      render: (text) => <strong>{text}</strong>,
     },
     {
-      title: "Email",
+      title: "📧 Email",
       dataIndex: "email",
       key: "email",
-      render: (text) => text || "N/A",
+      render: (text) => text || <i style={{ color: "#999" }}>N/A</i>,
     },
     {
-      title: "Specialization",
+      title: "🩺 Specialization",
       dataIndex: "specialization",
       key: "specialization",
-      render: (text) => text || "N/A",
+      render: (text) => text || <i style={{ color: "#999" }}>N/A</i>,
     },
     {
-      title: "Approval Status",
+      title: "✅ Status",
       dataIndex: "isApproved",
       key: "isApproved",
       render: (status) => (
-        <Tag color={status === "approved" ? "green" : "orange"}>
+        <Tag
+          icon={
+            status === "approved" ? <CheckCircleOutlined /> : <ExclamationCircleOutlined />
+          }
+          color={status === "approved" ? "green" : "orange"}
+        >
           {status.toUpperCase()}
         </Tag>
       ),
     },
     {
-      title: "Actions",
+      title: "⚙️ Actions",
       key: "actions",
       render: (_, record) => (
         <Space>
           {record.isApproved === "pending" ? (
             <Popconfirm
-              title="Approve this doctor?"
+              title="Are you sure to approve this doctor?"
               onConfirm={() => handleApprove(record._id)}
-              okText="Yes"
-              cancelText="No"
+              okText="Approve"
+              cancelText="Cancel"
             >
-              <Button type="primary" size="small">
+              <Button
+                type="primary"
+                size="small"
+                loading={approvingId === record._id}
+              >
                 Approve
               </Button>
             </Popconfirm>
@@ -115,25 +142,50 @@ const DoctorList = () => {
             <Tag color="green">Approved</Tag>
           )}
           <Link to={`/admin/doctors/${record._id}`}>
-            <Button size="small">View</Button>
+            <Button size="small" icon={<EyeOutlined />}>
+              View
+            </Button>
           </Link>
         </Space>
       ),
     },
   ];
 
-  if (loading) return <Spin tip="Loading doctors..." />;
-  if (error) return <Alert type="error" message={error} />;
+  if (loading)
+    return (
+      <div style={{ textAlign: "center", paddingTop: 60 }}>
+        <Spin tip="Loading doctors..." size="large" />
+      </div>
+    );
+
+  if (error)
+    return (
+      <div style={{ padding: 24 }}>
+        <Alert type="error" message={error} showIcon />
+      </div>
+    );
 
   return (
-    <div>
-      <h2>Doctor List</h2>
-      <Table
-        dataSource={doctors}
-        columns={columns}
-        rowKey="_id"
-        pagination={{ pageSize: 5 }}
-      />
+    <div style={{ padding: 24 }}>
+      <Card
+        style={{
+          borderRadius: 8,
+          boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
+          border: "1px solid #f0f0f0",
+        }}
+      >
+        <Title level={3} style={{ marginBottom: 24 }}>
+          🩺 Doctor Management
+        </Title>
+
+        <Table
+          dataSource={doctors}
+          columns={columns}
+          rowKey="_id"
+          pagination={{ pageSize: 5 }}
+          bordered
+        />
+      </Card>
     </div>
   );
 };

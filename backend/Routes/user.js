@@ -6,6 +6,7 @@ import {
   getAllUser,
   getUserProfile,
   getMyAppointments,
+  getAdminProfile,
 } from "../Controllers/userController.js";
 import { authenticate, restrict } from "../auth/verifyToken.js";
 
@@ -16,6 +17,13 @@ router.get("/", authenticate, restrict(["admin"]), getAllUser);
 router.put("/:id", authenticate, restrict(["patient"]), updateUser);
 router.delete("/:id", authenticate, restrict(["patient"]), deleteUser);
 router.get("/profile/me", authenticate, restrict(["patient"]), getUserProfile);
+router.get(
+  "/profile/admin",
+  authenticate,
+  restrict(["admin"]),
+  getAdminProfile
+);
+
 router.get(
   "/appointments/my-appointments",
   authenticate,
