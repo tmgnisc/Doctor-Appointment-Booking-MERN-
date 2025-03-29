@@ -11,6 +11,7 @@ import DoctorDetails from "../pages/Doctors/DoctorDetails";
 import MyAccount from "../Dashboard/user-accont/MyAccount";
 import Dashboard from "../Dashboard/doctor-account/Dashboard";
 import ProtectedRoute from "./ProtectedRoute";
+import CheckoutSuccess from "../pages/Doctors/CheckoutSuccess";
 
 // 🆕 Admin components
 import AdminDashboard from "../AdminDashboard/AdminAccount/AdminDashboard";
@@ -30,6 +31,7 @@ const Routers = () => {
         <Route path="/register" element={<Signup />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/checkout-success" element={<CheckoutSuccess />} />
 
         {/* 🛡️ Protected User Dashboard */}
         <Route
