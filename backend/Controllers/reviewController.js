@@ -1,6 +1,5 @@
 import Review from "../models/ReviewSchema.js";
 import Doctor from "../models/DoctorSchema.js";
-import { data } from "react-router-dom";
 
 //get all reviews
 
